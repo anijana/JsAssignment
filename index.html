@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Assignment1</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .main {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        background-color: #7f8c8d;
+      }
+      .container {
+        padding: 40px;
+        border: 1px solid black;
+        background-color: #34495e;
+        color: aliceblue;
+        text-align: center;
+        border-radius: 10px;
+        margin: 10px 20px 20px 10px;
+      }
+      input {
+        background-color: #bdc3c7;
+        border: 1px solid black;
+        border-radius: 5px;
+        outline: none;
+        padding: 10px;
+        margin: 10px 10px 10px 10px;
+      }
+      button {
+        background-color: #95a5a6;
+        border: 1px solid black;
+        border-radius: 5px;
+        outline: none;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="container">
+        <h3>Calculate the volume and surface area of the cylinder</h3>
+
+        <input id="Height" type="number" placeholder="Please Enter Height" />
+        <input id="Radius" type="number" placeholder="Please Enter Radius" />
+        <br />
+        <button onclick="Cylinder()">Submit</button>
+        <br />
+        <input id="output" type="text" />
+      </div>
+
+      <div class="container">
+        <h2>Calculate Power</h2>
+
+        <input id="Voltage" type="number" placeholder="Please Enter voltage" />
+        <input id="Current" type="number" placeholder="Please Enter current" />
+        <br />
+        <button onclick="btn()">Submit</button>
+        <br />
+        <input id="output1" type="text" />
+      </div>
+
+      <div class="container">
+        <h2>Calculate the Height and Weight</h2>
+
+        <input id="n" type="number" placeholder="value of n " />
+        <input id="w" type="number" placeholder="value of w" />
+        <input id="h" type="number" placeholder="value of h" />
+        <br />
+        <button onclick="btn1()">Submit</button>
+        <br />
+        <input id="output2" type="text" />
+      </div>
+    </div>
+
+    <script>
+      function Cylinder() {
+        let height = document.getElementById("Height").value;
+        let radius = document.getElementById("Radius").value;
+        document.getElementById("output").value = 3.14 * height * radius;
+      }
+
+      function btn() {
+        let voltage = document.getElementById("Voltage").value;
+        let current = document.getElementById("Current").value;
+        document.getElementById("output1").value = voltage * current;
+      }
+
+      function btn1() {
+        let n = document.getElementById("n").value;
+        let w = document.getElementById("w").value;
+        let h = document.getElementById("h").value;
+        document.getElementById("output2").value = Math.floor(n / (w * h));
+      }
+    </script>
+  </body>
+</html>

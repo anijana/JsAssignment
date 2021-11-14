@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript assignment2</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background-color: #48dbfb;
+      }
+      #container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 5vw;
+        border: 1px solid black;
+        width: 30vw;
+        height: 30vh;
+        background-color: #b8e994;
+        box-shadow: 0 0 5px black;
+        border-radius: 5px;
+        outline: none;
+        padding: 20px;
+      }
+      #container1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 5vw;
+        border: 1px solid black;
+        width: 30vw;
+        height: 30vh;
+        background-color: #26de81;
+        box-shadow: 0 0 5px black;
+        border-radius: 5px;
+        outline: none;
+        padding: 20px;
+      }
+      #button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      button {
+        margin: 1vw;
+        border: 1px solid black;
+        border-radius: 5px;
+        outline: none;
+        padding: 10px;
+      }
+      input {
+        border: 1px solid black;
+        border-radius: 5px;
+        outline: none;
+        padding: 10px;
+      }
+      .heading{
+          text-align: center;
+          padding: 10px;
+      }
+      label {
+          padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="input">
+        <label for="">Enter Your Name</label>
+        <input type="text" id="name" />
+        <h2 class="heading"></h2>
+      </div>
+      <div id="button">
+        <button onclick="morning()">Good Morning</button>
+        <button onclick="afternoon()">Good Afternoon</button>
+        <button onclick="evening()">Good Evening</button>
+      </div>
+    </div>
+
+    <div id="container1">
+      <label for="">Enter Any Text:</label>
+      <input type="password" id="name1" value="" />
+      <button id="btn" onclick="btn()">Show password</button>
+    </div>
+    <script>
+      function morning() {
+        var inMorning = document.getElementById("name");
+        var hMorning = document.getElementById("heading");
+        hMorning.innerText = "";
+        var output = inMorning.value;
+        if (hMorning.innerText == "") {
+          hMorning.innerText = "Good Morning " + output;
+          hMorning.style.color = "#6a89cc";
+        }
+      }
+      function afternoon() {
+        var inAfternoon = document.getElementById("name");
+        var hAfternoon = document.getElementById("heading");
+        hAfternoon.innerText = "";
+        var output = inAfternoon.value;
+        if (hAfternoon.innerText == "") {
+          hAfternoon.innerText = "Good Afternoon " + output;
+          hAfternoon.style.color = "#079992";
+        }
+      }
+      function evening() {
+        var inEvening = document.getElementById("name");
+        var hEvening = document.getElementById("heading");
+        hEvening.innerText = "";
+        var output = inEvening.value;
+        if (hEvening.innerText == "") {
+          hEvening.innerText = "Good Evening " + output;
+          hEvening.style.color = "#4b6584";
+        }
+      }
+
+      function btn() {
+        var inPass = document.getElementById("name1");
+        var buttonPass = document.getElementById("btn");
+
+        if (inPass.type == "password") {
+          inPass.type = "text";
+          buttonPass.innerText = "Hide Password";
+        } else {
+          inPass.type = "password";
+          buttonPass.innerText = "Show password";
+        }
+      }
+    </script>
+  </body>
+</html>
